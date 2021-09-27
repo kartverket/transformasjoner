@@ -1,0 +1,166 @@
+#------------------------------------------------------------------------------------------------------
+#   Transformations for Norway
+#   Norwegian Mapping Authority, NMA (Statens Kartverk)
+#------------------------------------------------------------------------------------------------------
+#
+#   This init-file describes transformations between global reference frames
+#   and EUREF89, NTM projection, NGO1948 projection, Norwegian ED50
+#   and height transformations (NN1954 and NN2000)
+#
+#   Verified by himsve@kartverket.no 20.06.03
+#
+#   Revisions:
+#   ----------
+#
+#   2020-06-05:  Change from gtx/ct2 to GeoTiff
+#
+#   2020-09-09:  Implementation EUREF89<>ED50. Transformation is simplified by ct2 grid.
+#
+#------------------------------------------------------------------------------------------------------
+
+# EUREF89 -> ITRF2005 @ t_obs
+<ITRF2005> +proj=pipeline +ellps=GRS80
+		# EUREF89 -> ITRF2005 @ 2009.58
+		+step +init=NO:_EUREF89_ITRF2005epoke200958 
+		
+		# ITRF2005 @ 2009.58 -> ITRF2000 @ 2009.58 
+		+step +init=NO:_ITRF2000epoke200958_ITRF2005epoke200958 +inv 
+		
+		# ITRF2000 @ 2009.58 -> ITRF2000 @ t_obs, intraplatekorreksjon + hastighetsmodell
+		# Uncommend. Correction is done twice.								
+		#+step +init=NO:_ITRF2000_AB2001 +inv 
+		#+step +proj=deformation +t_epoch=2009.58 +xy_grids=@Milne.ct2 +z_grids=@RH2000LU_absup.gtx 
+		
+		# ITRF2000 @ t_obs -> ITRF2005 @ t_obs
+		+step +init=ITRF2000:ITRF2005 
+		
+# EUREF89 -> ITRF2008 @ t_obs
+<ITRF2008> +proj=pipeline +ellps=GRS80
+		# EUREF89 -> ITRF2005 @ t_obs
+		+step +init=NO:ITRF2005 
+		
+		# ITRF2005 @ t_obs -> ITRF2008 @ t_obs
+		+step +init=ITRF2008:ITRF2005 +inv 
+		
+# EUREF89 -> ITRF2014 @ t_obs
+# Torbjørns gamle notat
+<ITRF2014> +proj=pipeline +ellps=GRS80
+		# EUREF89 -> ITRF2008 @ t_obs
+  
+		# Grid transformations PGS_EUREF89 -> ITRF2014
+		#+step +proj=xyzgridshift +grids=@PGS0817_NKGRF17_20200508.tif +ellps=GRS80 +inv 
+		
+		+step +init=NO:ITRF2008 
+		
+		# ITRF2008 @ t_obs -> ITRF2014 @ t_obs
+		+step +init=ITRF2014:ITRF2008 +inv 
+		
+		# NKGRF17 corrections in ITRF2014
+		+step +proj=deformation +t_epoch=2009.58 +xy_grids=@NKG_RF17vel_temp_xy.ct2 +z_grids=@NKG_RF17vel_temp_u.gtx  
+		
+		# TODO: Replace NKG_RF17vel_temp_u.gtx/NKG_RF17vel_temp_xy.ct2 with nkgrf17vel_temp.tif 		
+		# Alternative with use of GeoTiff
+		# +step +proj=deformation +t_epoch=2009.58 +grids=@nkgrf17vel_temp.tif 
+		
+		# ITRF2014 EURA corrections
+       	+step +proj=helmert +t_epoch=2009.58 +drx=-0.000085 +dry=-0.000531 +drz=0.000770 +convention=position_vector
+# Torbjørns nye notat / Olavs nye bevegelsesmodell
+<ITRF2014_new> +proj=pipeline +ellps=GRS80
+
+# NTM projection sone 5 to 30
+<NTM05> +proj=tmerc +lat_0=58 +lon_0=5.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM06> +proj=tmerc +lat_0=58 +lon_0=6.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM07> +proj=tmerc +lat_0=58 +lon_0=7.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM08> +proj=tmerc +lat_0=58 +lon_0=8.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM09> +proj=tmerc +lat_0=58 +lon_0=9.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM10> +proj=tmerc +lat_0=58 +lon_0=10.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM11> +proj=tmerc +lat_0=58 +lon_0=11.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM12> +proj=tmerc +lat_0=58 +lon_0=12.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM13> +proj=tmerc +lat_0=58 +lon_0=13.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM14> +proj=tmerc +lat_0=58 +lon_0=14.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM15> +proj=tmerc +lat_0=58 +lon_0=15.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM16> +proj=tmerc +lat_0=58 +lon_0=16.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM17> +proj=tmerc +lat_0=58 +lon_0=17.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM18> +proj=tmerc +lat_0=58 +lon_0=18.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM19> +proj=tmerc +lat_0=58 +lon_0=19.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM20> +proj=tmerc +lat_0=58 +lon_0=20.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM21> +proj=tmerc +lat_0=58 +lon_0=21.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM22> +proj=tmerc +lat_0=58 +lon_0=22.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM23> +proj=tmerc +lat_0=58 +lon_0=23.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM24> +proj=tmerc +lat_0=58 +lon_0=24.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM25> +proj=tmerc +lat_0=58 +lon_0=25.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM26> +proj=tmerc +lat_0=58 +lon_0=26.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM27> +proj=tmerc +lat_0=58 +lon_0=27.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM28> +proj=tmerc +lat_0=58 +lon_0=28.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM29> +proj=tmerc +lat_0=58 +lon_0=29.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+<NTM30> +proj=tmerc +lat_0=58 +lon_0=30.5 +k=1 +x_0=100000 +y_0=1000000 +ellps=GRS80 +units=m +no_defs
+
+#------------------------------------------------------------------------------------------------------
+#   Transformation parameters are achieved from the document: ngo_parametre.pdf
+#------------------------------------------------------------------------------------------------------
+
+<NGO> +proj=lschelmert +pp_trans=EUREF89_NGO48_20081014.cpt +polygons=NGO_areas.geojson +ellps=GRS80
+
+<NGO01> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=06.05625000000000000 +a=6377492.0176 +rf=299.15281285
+<NGO02> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=08.38958333333333333 +a=6377492.0176 +rf=299.15281285
+<NGO03> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=10.72291666666666667 +a=6377492.0176 +rf=299.15281285
+<NGO04> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=13.22291666666666667 +a=6377492.0176 +rf=299.15281285
+<NGO05> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=16.88958333333333333 +a=6377492.0176 +rf=299.15281285
+<NGO06> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=20.88958333333333333 +a=6377492.0176 +rf=299.15281285
+<NGO07> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=24.88958333333333333 +a=6377492.0176 +rf=299.15281285
+<NGO08> +proj=pipeline +step +init=NO:NGO +step +proj=tmerc +lat_0=58.0 +lon_0=29.05625000000000000 +a=6377492.0176 +rf=299.15281285
+
+#------------------------------------------------------------------------------------------------------
+#	Height Transformation for NN1954 and NN2000
+#
+#   Following files are in use:
+#
+#   href2008a.tif 		         - used for NN1954
+#   HREF2018B_NN2000_EUREF89.tif - used for NN2000
+#   NNTrans2018B.tif             - between NN1954 and NN2000
+#------------------------------------------------------------------------------------------------------
+
+#Ellipsoidal height to NN1954
+<NN1954> +proj=pipeline 
+	 +step +proj=vgridshift +grids=no_kv_href2008a.tif 
+
+#Ellipsoidal height to NN2000
+<NN2000> +proj=pipeline 
+	 +step +proj=vgridshift +grids=no_kv_HREF2018B_NN2000_EUREF89.tif 
+
+#Between NN1954 and NN2000
+<NN1954_NN2000> +proj=pipeline 
+	 	+step +proj=vgridshift +grids=NNTrans2018B.tif +inv 
+	 	
+#Between NN2000 and NN1954
+<NN2000_NN1954> +proj=pipeline 
+	 	+step +proj=vgridshift +grids=NNTrans2018B.tif 
+
+#------------------------------------------------------------------------------------------------------
+#   Transformation EUREF89<>ED50
+#
+#   The transformation is based on a horizontal grid transformation.
+#   The grid is generated in the NMA deprecated transformation library. The accuracy of the
+#   transformation is 0.01 meter in in U99 (3 sigmas).
+#
+#------------------------------------------------------------------------------------------------------
+
+<ED50> +proj=pipeline 
+		+step +proj=utm +zone=33 +ellps=GRS80 +inv
+		+step +proj=hgridshift +grids=EUREF89_ED50.ct2
+		+step +proj=utm +zone=33 +ellps=intl
+
+#------------------------------------------------------------------------------------------------------
+# Private transformations
+#------------------------------------------------------------------------------------------------------
+
+#EUREF89 -> ITRF2005 Epoch 2009.58  (xyz -> xyz)
+<_EUREF89_ITRF2005epoke200958> +proj=pipeline +ellps=GRS80
+		+step +proj=helmert +convention=coordinate_frame +x=-0.0950 +y=0.0139 +z=-0.0748 +s=0.01424 +rx=-0.001044 +ry=-0.0141853 +rz=0.0155201 +exact +inv 
+		+step +proj=deformation +dt=14.58 +xy_grids=@Milne.ct2 +z_grids=@RH2000LU_absup.gtx 
+
+# todo
+<_ITRF2000_AB2001> +proj=helmert +t_epoch=2009.58 +drx=0.000081 +dry=0.000490 +drz=-0.000792 +convention=position_vector 
+
+# Needed because of bug in proj: https://github.com/OSGeo/proj.4/issues/1239
+<_ITRF2000epoke200958_ITRF2005epoke200958> +proj=helmert +x=0.001816 +y=-0.000158 +z=0.023044 +s=-0.0011664 +convention=position_vector
