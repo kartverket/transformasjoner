@@ -21,15 +21,20 @@ I eksemplet nedenfor transformeres geografiske til jordsentriske koordinater:
 
 En transformasjon med *cct* kan være et sett av flere operasjoner som er satt sammen i en *pipeline*.		
 
-``cct +proj=pipeline		
-+step +proj=<operation		
-+step +proj=<operation>``		
+```
+cct +proj=pipeline
++step +proj=<operation>
++step +proj=<operation>
+```		
 
 Et praktisk eksempel:
 
-``cct +proj=pipeline\+step +proj=cart +ellps=GRS80\ 
-
-+step +proj=helmert +x=3000 +y=1000 +z=2000/ +step +proj=cart +ellps=GRS80 +inv/ +step/+step``
+```
+cct +proj=pipeline 
++step +proj=cart +ellps=GRS80
++step +proj=helmert +x=3000 +y=1000 +z=2000
++step +proj=cart +ellps=GRS80 +inv
+```		
 
 I eksempelet blir disse tre stegene utført:
 
@@ -39,10 +44,9 @@ I eksempelet blir disse tre stegene utført:
 
 ### Basisoperasjoner i Proj
 
-* helmert
+* *helmert*
 	* 7-parameter Helmert-transformasjon. Eventuelt 14-parameter hvis hastigheter er definert.
 	* 4-parameter Helmert-transformasjon ved 2D. Parametrene ved 2D-Helmert brukes parametrene *x*, *y*, *s* og $$\theta$$.
-
 * molobadekas
 	* Molodensky-Badekas-transformasjon er en utvida 7-parameter Helmert-transformasjon med mulighet for å definere rotasjonspunktet for *rx*, *ry* og *rz*.
 * molodensky
@@ -89,4 +93,4 @@ Proj har støtte for en mengde ulike projeksjoner. I norske områder bruker for 
 	Eksempel med "tmerc"; Konvertering fra geografiske koordinater til NGO48 III:
 	``+proj=tmerc +lat_0=58.0 +lon_0=10.72291666666666667 +a=6377492.0176 +rf=299.15281285``	 
 * merc
-	 * "merc" er standard Merkatorprojeksjon. Et eksempel på dette er WGS84 / World Mercator
+	 * "merc" er standard Merkatorprojeksjon. Et eksempel på dette er WGS84 World Mercator		
