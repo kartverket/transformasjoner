@@ -12,4 +12,8 @@ plugins:
 
 # theme: jekyll-theme-modernist
 
+#markdown: kramdown
+#kramdown:
+#    math_engine: katex
+
 include: ['_pages']

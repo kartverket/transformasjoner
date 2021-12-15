@@ -3,11 +3,13 @@ layout: page
 title: Brukerdefinerte transformasjoner
 ---
 
-I stedet for transformasjoner med EPSG-koder har Proj stor fleksibilitet på å definere egne transformasjoner og konverteringer. Brukerdefinerte transformasjoner bygger på proj-kommandoen *cct*. En transformasjon med *cct* kan være et sett av flere operasjoner som er satt sammen i en *pipeline*.		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
+I tillegg til transformasjoner med EPSG-koder har Proj stor fleksibilitet på å definere egne transformasjoner og konverteringer. Brukerdefinerte transformasjoner bygger på proj-kommandoen *cct*.		
 
-``cct +proj=*operation*...``		
-
+``cct +proj=<operation>...``		
 
 ## Eksempler på brukerdefinerte transformasjoner
 
@@ -15,21 +17,36 @@ I eksemplet nedenfor transformeres geografiske til jordsentriske koordinater:
 
 ``cct +proj=cart +ellps=GRS80``		
 
-
 ### Transformasjon med pipelines
 
+En transformasjon med *cct* kan være et sett av flere operasjoner som er satt sammen i en *pipeline*.		
 
+``cct +proj=pipeline		
++step +proj=<operation		
++step +proj=<operation>``		
+
+Et praktisk eksempel:
+
+``cct +proj=pipeline\+step +proj=cart +ellps=GRS80\ 
+
++step +proj=helmert +x=3000 +y=1000 +z=2000/ +step +proj=cart +ellps=GRS80 +inv/ +step/+step``
+
+I eksempelet blir disse tre stegene utført:
+
+1. Konvertering fra geografiske til kartesiske koordinater med GRS80-ellipsoiden.
+2. Translahere de kartesiske koordinatene med vektoren (3000, 1000, 2000).
+3. Konvertere tilbake til geografiske koordinater med GRS80-ellipsoiden.
 
 ### Basisoperasjoner i Proj
 
-
 * helmert
 	* 7-parameter Helmert-transformasjon. Eventuelt 14-parameter hvis hastigheter er definert.
-	- "Den andre metoden"
+	* 4-parameter Helmert-transformasjon ved 2D. Parametrene ved 2D-Helmert brukes parametrene *x*, *y*, *s* og $$\theta$$.
+
 * molobadekas
-	* Molodensky-Badekas-transformasjon er en utvida 7-parameter Helmert-transformasjon med mulighet for å definere rotasjonspunktet for rx, ry og rz.
+	* Molodensky-Badekas-transformasjon er en utvida 7-parameter Helmert-transformasjon med mulighet for å definere rotasjonspunktet for *rx*, *ry* og *rz*.
 * molodensky
-	* Molodensky-transformasjon i Proj er en transformasjon som består i parametrene $\delta x, $\delta y, $\delta z, $\delta a og $\delta b. $\delta a og $\delta a er forskjellen i stor og liten halvakse på kilde- og målkoordinatsystemet. 
+	* Molodensky-transformasjon i Proj er en transformasjon som består i parametrene $$\delta x$$, $$\delta y$$, $$\delta z$$, $$\delta a$$ og $$\delta b$$. $$\delta a$$ og $$\delta a$$ er forskjellen i stor og liten halvakse på kilde- og målkoordinatsystemet. 
 * affine
 	* Affin transformasjon i Proj følger standard 3D-affin transformasjon med 14 parametre
 * hgridshift
@@ -54,7 +71,7 @@ I eksemplet nedenfor transformeres geografiske til jordsentriske koordinater:
 * geoc
 	 * Konverterer fra geodetisk breddegrad til jordsentrisk breddegrad
 * topocentric
-	 * Ved "topocentic" blir jordsentriske koordinater konvertert til topsentriske koordinater. Origo for det toposentriske koordinatsystemet må være oppgitt.
+	 * Ved *topocentic* blir jordsentriske koordinater konvertert til topsentriske koordinater. Origo for det toposentriske koordinatsystemet må være oppgitt.
 * unitconvert
 	 * Innebærer konvertering av input- og outputkoordinater til ulike enheter.
 * axisswap
