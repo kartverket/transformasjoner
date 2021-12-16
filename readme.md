@@ -21,3 +21,4 @@
 * [Installasjon av Proj](_pages/installation_proj.md)
 * [pyproj](_pages/pyproj.md)
 * [gdal](_pages/gdal.md)
+* [Kartverkets transformasjoner som OpenAPI](_pages/openapi.md)
