@@ -6,11 +6,11 @@ order: 3
 
 ## Conda (Anaconda)
 
-Conda er den mest anbefalte grensesnittet for installasjon av Proj. Conda (Anaconda) fungerer på Windows, Mac og de fleste Linux-varianter. Dessuten vil pakkene for Proj alltid være oppdatert til siste versjon ved installasjon via Conda.
+Conda er et anbefalt grensesnittet for installasjon av Proj. Conda (Anaconda) fungerer på Windows, Mac og de fleste Linux-varianter. Dessuten vil pakkene for Proj alltid være oppdatert til siste versjon ved installasjon via Conda.
 
 Link til installasjon av Conda (Anaconda/Miniconda) på ulike plattformer:
 
-https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+* [https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html](Anaconda installasjon)
 
 > conda install -c conda-forge proj
 
@@ -35,8 +35,12 @@ Kommando for sjekke installert proj-versjon:
 
 ### Proj-data
 
-Proj er også avhengig av tilgang på ressursfiler for transformasjonene. Ekspempel på ressursfiler kan være griddfiler, json-filer og proj.db-databasen.
+Proj er også avhengig av tilgang på ressursfiler for transformasjonene. Eksempel på ressursfiler kan være griddfiler, json-filer og proj.db-databasen. Flere av de norske transformasjonene er avhengig av nedlasting av ressursfiler fra *Proj-data* for å fungere.		
 
+* [Proj-data på Github](https://github.com/OSGeo/PROJ-data)
+* [Proj-data på CDN](https://cdn.proj.org/)
+
+Installasjon av Proj-data med conda:
 > conda install -c conda-forge proj-data
 
 Filene vil da legges på mappestrukten:
@@ -152,7 +156,7 @@ For å fjerne PROJ_LIB:
 
 ### Proj.db
 
-Proj.db er en relasjonsdatabase på SQLite. Databasen inneholder innehold fra EPSG-databasen samt egne data for Proj. Proj.db oppdateres og synkroniseres mot EPSG-databasen.
+Proj.db er en relasjonsdatabase på SQLite. Databasen sitt innhold er hentet fra [EPSG-registeret](https://epsg.org/search/by-name) samt egne data for Proj. Proj.db oppdateres og synkroniseres mot EPSG-registeret kontinuelig.
 
 Proj.db må være på plass for koordinatransformasjoner med bruk av EPSG-koder. \
 

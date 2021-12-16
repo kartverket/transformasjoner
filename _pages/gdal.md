@@ -1,12 +1,12 @@
 ---
 layout: page
 title: GDAL
-order: 8
+order: 9
 ---
 
 GDAL er et "open source"-bibliotek for rasteroperasjoner.  
 
-* [Nettside](https://gdal.org/)
+* [Link til Gdal si nettside](https://gdal.org/)
 * [Gdal på Github](https://github.com/OSGeo/gdal)
 
 ### Installasjon av GDAL med Conda

@@ -1,21 +1,21 @@
 ---
 layout: page
-title: PyProj
-order: 7
+title: pyproj
+order: 8
 ---
 
-PyProj er et Proj API for Python. PyProj er et anbefalt API ettersom det bruker å være oppdatert med siste versjon av Proj. API kan brukes både i kommando og i pythonscripts.
+*pyproj* er et grensesnitt til Proj for Python. pyproj er et anbefalt API ettersom det bruker å være oppdatert med siste versjon av Proj. API'et kan brukes både i kommando og i pythonscripts.
 
-* [Dokumentasjon på PyProj](https://pyproj4.github.io/pyproj/stable/)
-* [PyProj på GitHub](https://github.com/pyproj4/pyproj)
+* [Dokumentasjon på pyproj](https://pyproj4.github.io/pyproj/stable/)
+* [pyproj på GitHub](https://github.com/pyproj4/pyproj)
 
-### Installasjon av PyProj ved conda
+### Installasjon av pyproj ved conda
 
 > conda config --prepend channels conda-forge \
 > conda config --set channel_priority strict \
 > conda install pyproj
 
-### Installasjon av PyProj med pip
+### Installasjon av pyproj med pip
 
 > pip install pyproj
 
