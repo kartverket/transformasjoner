@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Referanserammer
+order: 8
 ---
 
 ## Statiske referanserammer

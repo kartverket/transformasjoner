@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Installasjon av Proj
+order: 3
 ---
 
 ## Conda (Anaconda)

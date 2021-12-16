@@ -41,7 +41,6 @@ Proj er fritt tilgjengelig for alle og er lisensiert som *Open source*. Bibliote
 
 * [Kartverkets nye transformasjon-API basert på Proj](https://ws.geonorge.no/transformering/v1/)
 
-
 <!--
 You can use HTML elements in Markdown, such as the comment element, and they won't
 be affected by a markdown parser. However, if you create an HTML element in your

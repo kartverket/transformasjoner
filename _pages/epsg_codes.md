@@ -1,12 +1,20 @@
 ---
 layout: page
 title: Transformasjon med EPSG-koder
+order: 5
 ---
 
 Transformasjonene og referanserammene i Proj følger kodene i EPSG-registeret. EPSG-registeret er administrert av IOGP (International Association of Oil & Gas Producers) og fungerer som en "de facto standard" vedrørende transformasjoner og referanserammer.
 
-Transformasjoner med EPSG-koder er en enkel og anbefalt alternativ metodikk. Brukeren og systemene trenger da bare forholde seg til kodene som er gitt for referanserammene og transformasjonene.
+Transformasjoner med EPSG-koder er en enkel og anbefalt alternativ metodikk. Brukeren og systemene trenger da bare forholde seg til kodene som er gitt for referanserammene og transformasjonene.		
 
+Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsystemet man skal transformere fra og til.		
+
+## Linker til EPSG
+
+* [EPSG-registeret](https://epsg.org/home.html)
+* [Søkeside på EPSG-koder fra MapTiler Team](https://epsg.io/)
+* [EPSG-koder i GeoNorge](https://register.geonorge.no/epsg-koder)
 
 ## Norske ref.rammer/koordinatsystemer støtta av Proj
 
