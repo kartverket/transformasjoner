@@ -12,20 +12,18 @@ Link til installasjon av Conda (Anaconda/Miniconda) på ulike plattformer:
 
 * [https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html](Anaconda installasjon)
 
+Kommando for installasjon i Conda:
 > conda install -c conda-forge proj
 
 Erfaringsvis kan man med denne kommandoen risikere å installere forelda versjonen av pakken.
 
-Tilgjengelige versjoner kan søkes opp ved: 
-
+Tilgjengelige versjoner kan søkes opp ved:
 > conda search proj
 
 Hvis Proj-versjonene for kanalen "conda-forge" ikke er tilgjengelig kan man legge den til ved:
-
 > conda config --add channels conda-forge
 
 Installer så et spesifikt build- og versjonsnummer ved:
-
 > conda install proj=< versjon >=< buildnummer >
 
 Kommando for sjekke installert proj-versjon:
@@ -113,24 +111,19 @@ Anaconda-mappe eller  usr/local
 ```
 
 Proj vil kunne lete etter flere lokale mapper hvor ressursfilene er plassert. Kommando for finne aktuelle mapper:
-
-> projinfo --searchpaths \
+> projinfo --searchpaths
 
 #### projsync
 
 For nedlasting av ressursfiler kan man kjøre kommandoen "projsync". Ressursfilene hentes fra skytjenesten https://cdn.proj.org/ og er egentlig en speiling av proj-data (https://github.com/OSGeo/PROJ-data/).
 
 Laste ned ressursfiler for norske områder:
-
 > projsync --bbox 2,57,32,82
 
-
-Dersom alle ressursfiler skal lastes ned kjør:
-
+Dersom alle ressursfiler skal lastes ned så kjør:
 > projsync --all
 
-
-Ved synking ved projressurser vil filene plasseres på omådet
+Ved synking ved projressurser vil filene plasseres på omådet		
 
 Med Windows:
 
@@ -144,11 +137,11 @@ Med Linux:
 /.local/share/proj
 ```
 
-#### PROJ_LIB
+#### Miljøvariabel *PROJ_LIB*
 
 Stien til ressursfilene kan også settes manualt med miljøvariabelen PROJ_LIB. Da vil denne stien få førsteprioritet.
 
-> set PROJ_LIB=<lokal sti>
+> set PROJ_LIB=< lokal sti >
 
 For å fjerne PROJ_LIB:
 
@@ -158,7 +151,7 @@ For å fjerne PROJ_LIB:
 
 Proj.db er en relasjonsdatabase på SQLite. Databasen sitt innhold er hentet fra [EPSG-registeret](https://epsg.org/search/by-name) samt egne data for Proj. Proj.db oppdateres og synkroniseres mot EPSG-registeret kontinuelig.
 
-Proj.db må være på plass for koordinatransformasjoner med bruk av EPSG-koder. \
+Proj.db må være på plass for koordinatransformasjoner med bruk av EPSG-koder.
 
 ## Docker
 
@@ -179,7 +172,7 @@ Liste alle tilgjengelige kontainere:
 
 Eksempel transformasjon fra ITRF2014 til EUREF89 med dockerkontainer:
 > docker exec -it <container_name> cs2cs -d 10 EPSG:9000 EPSG:4937 \
-60 10 100 2021.5 \
+> 60 10 100 2021.5 
 59.9999949042   9.9999914938 99.8591580065 2021.5
 
 Stoppe docker container
@@ -192,12 +185,10 @@ Kildekoden på Proj ligger som nevnt på GitHub.
 Kloning Proj:
 > git clone https://github.com/OSGeo/PROJ.git
 
-
 ### cmake
 
 Bygge Proj i Linux:
-
-> cd proj
+> cd proj \
 > make
 
 
@@ -209,39 +200,31 @@ Proj kan kompileres og bygges i Visual Studio (2015/2017/2019) dersom cmake er i
 * Start VS
 * Åpne repoet som Cmake
 
-![sdsd](../src/VS1.png) \
+![sdsd](../src/VS1.png)
 
 
 ### vcpkg
 
-Oppskrift på installasjon av vcpkg;
-
+Oppskrift på installasjon av vcpkg:
 https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=vs-2019
 
-
 Oppskrift bygging og installasjon av Proj vha. vcpkg:
-
 https://proj.org/install.html#building-on-windows-with-vcpkg-and-visual-studio-2017-or-2019
 
 
 Opprett ei mappe for installasjon av vcpkg:
-
 > C:\Tools>
 
 Klon vcpkg fra Mircosoft sin GitHub:
-
 > git clone https://github.com/microsoft/vcpkg
 
 Gå til vcpkg:
-
 > cd vcpkg
 
-Installer vcpkg med bootstrap: 
-
+Installer vcpkg med bootstrap:
 > bootstrap-vcpkg.bat
 
-Hvis Visual Studio er installer på maskin så må vcpkg og VS integrerest.
-
+Hvis Visual Studio er installer på maskin så må vcpkg og VS integreres:
 > vcpkg integrate install
 
 #### Installere nødvendige pakker
@@ -253,18 +236,15 @@ Proj er i hovedsak avhengig av disse pakkene:
 * tiff
 
 Installer så ulike pakker som Proj er avhengig av (64 bits):
-
 > vcpkg install sqlite3[core,tool]:x64-windows tiff:x64-windows curl:x64-windows eigen3[core]:x64-windows
 
 Tilsvarande for 32 bits:
-
 > vcpkg install sqlite3[core,tool]:x86-windows tiff:x86-windows curl:x86-windows eigen3[core]:x86-windows
 
 
 #### Bygge PROJ
 
 Clone Proj kildekode fra GitHub:
-
 > C:\Tools\vcpkg>cd .. \
 > git clone https://github.com/OSGeo/PROJ.git \
 > cd PROJ
@@ -277,19 +257,15 @@ Opprette byggemappe for Proj:
 Opprett VS-prosjekter med cmake
 
 64 bits:
-
 > cmake -DCMAKE_GENERATOR_PLATFORM=x64 -Ax64 -DCMAKE_CL_64=1 -DVCPKG_TARGET_TRIPLET=x64-windows -DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake ..
 
 32 bits:
-
 > cmake -DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake ..
 
 Bygging i debug:
-
 > cmake --build . --config Debug -j 8
 
 Bygging i release:
-
 > cmake --build . --config Release -j 8
 
 
