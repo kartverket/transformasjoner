@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: page
 title: Blogg
-order: 13
+order: 3
 permalink: /_posts/
 ---
 <ul>

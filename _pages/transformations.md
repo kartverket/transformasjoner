@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Transformasjoner
-order: 12
+order: 13
 ---
 
 ## Konverteringer
@@ -12,10 +12,19 @@ Begrepet konvertering innebærer å endre måten koordinater representeres på i
 
 <!-- Original link: https://en.wikipedia.org/wiki/Local_tangent_plane_coordinates#/media/File:ECEF_ENU_Longitude_Latitude_relationships.svg -->
 
-## Horisontale datumtransformasjoner
 
-## Vertikale datumtransformasjoner
+## Transformasjoner
+
+Begrepet transformasjon innbærer å skifte referanseramme for en koordinat, for eksempel å transformasjonere en koordinat fra EUREF89 til ED50.
+
+### Horisontale datumtransformasjoner
+
+Ved horisontale (datum)transformasjoner bytter man referanseramme for en grunnrisskoordinat.
+
+### Vertikale datumtransformasjoner
+
+Vertikal (datum)transformasjoner bytter man vertikal referanseramme for en koordinat. Et eksempel på vertikal datumtransformsjoner er å bytte fra NN2000 til Sjøkartnull.
+
+### Dynamiske transformasjoner
 
 
-
-## Dynamiske transformasjoner

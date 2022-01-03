@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Transformasjon med EPSG-koder
-order: 5
+order: 6
 ---
 
 Transformasjonene og referanserammene i Proj følger kodene i EPSG-registeret. EPSG-registeret er administrert av IOGP (International Association of Oil & Gas Producers) og fungerer som en "de facto standard" vedrørende transformasjoner og referanserammer.		
