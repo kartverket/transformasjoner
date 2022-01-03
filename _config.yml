@@ -6,6 +6,8 @@ author:
   url:               https://kartverket.no
   email:             sveinung.himle@kartverket.no
 
+permalink: /:title
+
 # Gems
 plugins:
   - jekyll-paginate
