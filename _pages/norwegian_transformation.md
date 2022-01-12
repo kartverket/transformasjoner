@@ -8,11 +8,11 @@ order: 5
 
 
 
-### NN2000-høydetransformasjoner
+### NN2000-høydetransformasjon
 
 
 
-### NN54-høydetransformasjoner
+### NN54-høydetransformasjon
 
 
 ### Tranformasjoner mellom ETRS89 (EUREF89) og NGO48
@@ -21,8 +21,8 @@ order: 5
 ### Tranformasjoner mellom ITRF2014 og ETRS89 (EUREF89)
 
 
-### Ny samlet transformajon mellom ED50 og ETRS89 (EUREF89), under arbeid
+### Ny samlet transformasjon mellom ED50 og ETRS89 (EUREF89), under arbeid
 
 
-### Sjøkartnull-høydetransformasjoner (Chart Datum Norway), under arbeid
+### Sjøkartnull-høydetransformasjon (Chart Datum Norway), under arbeid
 

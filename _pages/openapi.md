@@ -12,7 +12,7 @@ Kartverket har utviklet en webtjeneste for transformasjoner. Tjenesten er utvikl
 * [Link til OpenAPI-skjema](https://ws.geonorge.no/transformering/v1/openapi.json)
 * [Link til OpenAPI-spesifikasjonen](https://swagger.io/specification/)		
 
-API'et er også et RESTFul-API (**RE**presentational **S**tate **T**ransfer) med to Get-funksjonar.
+API'et er også et RESTFul-API (**RE**presentational **S**tate **T**ransfer) med to Get-funksjoner:
 
 * Koordinatsystemer_projeksjoner_get:
 > https://ws.geonorge.no/transformering/v1/#/transformering/Koordinatsystemer_projeksjoner_get
