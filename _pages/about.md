@@ -12,7 +12,6 @@ Nettsiden er utviklet med tjenesten [Github Pages](https://pages.github.com/), d
 
 For mer informasjon om transformasjoner, referanserammer og Proj:
 
-* E-mail: [Kartverket](mailto:post@kartverket.no)
 * E-mail: [Kundesenteret](mailto:kundesenter@kartverket.no )
 
 ## Transformasjonsteamet
