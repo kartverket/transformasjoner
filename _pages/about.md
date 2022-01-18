@@ -18,7 +18,7 @@ For mer informasjon om transformasjoner, referanserammer og Proj:
 
 * Karoline Skaar, produkteier
 * Sveinung Himle, utvikler
-* Kristin Skjerven, formidling
+* Kristin Skjerven, markedsføring og formidling
 
 <!--
 Skrive litt om repoet
