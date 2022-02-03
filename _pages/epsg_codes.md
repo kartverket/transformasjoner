@@ -80,3 +80,18 @@ I tabellen nedenfor vilkårlige punkter transformert i Proj med EPSG-koder på f
 I dette eksemplet initialiseres Proj til å transformere jordsentriske koordinater fra ITRF2014 til EUREF89. Opsjonen "--area" henviser til EPSG-koden på området transformasjonen skal gjelde for. EPSG:1352 som er brukt ovenfor, er koden for "Norway - onshore". Til sammenligning vil tilsvarende transformasjon for Danmark være:
 
 ``cs2cs EPSG:7789 EPSG:4936 --area EPSG:1080``
+
+
+#### Transformasjon med egendefinerte sammensatte referanserammer
+
+Proj har mulighet til å sette sammen forhåndsdefinerte datum for høyde og grunnriss. For eksempel kan man kombinere ETRS89 med høydedatumet EGM2008. Da kan man 
+bruke syntaksen *EPSG:4258+EPSG:3855*.
+
+Utlisting av *EPSG:4258+EPSG:3855* på WKT-format:
+
+``projinfo -k ensemble EPSG:4258+EPSG:3855 -o WKT2:2019``
+
+Transformasjon fra ETRS89 ellipsoidiske høyder til EGM2008:
+
+``cs2cs -d 4 EPSG:4258 EPSG:4258+EPSG:3855``
+
