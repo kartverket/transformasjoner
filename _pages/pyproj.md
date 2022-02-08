@@ -39,8 +39,8 @@ Ressursfilene vil plasseres i samme mappe som for standard Proj-installasjon.
 
 > python \
 > from pyproj import Transformer, transform \
-> transformer = Transformer.from_crs(4258, 4273) # Transformerer fra EUREF89 geogr. til NGO48 geogr. \
-> transformer.transform(60,10,0,2020) \
+> transform = Transformer.from_crs(4258, 4273) # Transformerer fra EUREF89 geogr. til NGO48 geogr. \
+> transform.transform(60,10,0,2020) \
 (59.99924756384341, 10.004772119609207, 0.0, 2020.0)
 
 #### Transformere til projeksjon som mangler EPSG-kode
