@@ -33,7 +33,8 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 | ETRS89 NTM 5-30 NN2000  | EPSG      |   5945-5970 |                                  |
 | NN2000                  | EPSG      |        5941 | Vertialt datum. Bruk heller 5942 |
 | NN54                    | EPSG      |        5776 | Vertialt datum. Bruk heller 6144 |
-| CD Norway Depth         | EPSG      |        9672 | Under arbeid                     |
+| CD Norway Depth         | EPSG      |        9672 | (Sjøkartnull)                    |
+| ETRS89 geogr. CD Norway | EPSG      |        9883 |                                  |
 | NGO48 geografisk 2D     | EPSG      |        4273 |                                  |
 | NGO48 akse I-VIII       | EPSG      | 27391-27398 |                                  |
 | ITRF2014 geosentrisk    | EPSG      |        7789 |                                  |
@@ -81,6 +82,18 @@ I dette eksemplet initialiseres Proj til å transformere jordsentriske koordinat
 
 ``cs2cs EPSG:7789 EPSG:4936 --area EPSG:1080``
 
+#### Transformasjon fra NN2000-høyder til Sjøkartnull-dybder
+
+Fra og med Proj 9.0.0 er det mulig å transformere sømløst mellom NN2000 og Sjøkartnull
+
+Transformasjon fra NN2000-høyder til Sjøkartnull-dybder:
+
+``cs2cs -d 4 EPSG:4258+EPSG:5941 EPSG:4258+EPSG:9672``
+
+Eller som kortform:
+
+``cs2cs -d 4 EPSG:5942 EPSG:9883``
+
 
 #### Transformasjon med egendefinerte sammensatte referanserammer
 
@@ -94,4 +107,3 @@ Utlisting av *EPSG:4258+EPSG:3855* på WKT-format:
 Transformasjon fra ETRS89 ellipsoidiske høyder til EGM2008:
 
 ``cs2cs -d 4 EPSG:4258 EPSG:4258+EPSG:3855``
-
