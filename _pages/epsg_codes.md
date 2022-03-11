@@ -18,30 +18,31 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 
 ## Norske ref.rammer/koordinatsystemer støtta av Proj
 
-| Namn ref.rammer         | Autoritet | Kode        | Merknad                          |
-| ----------------------- | --------- | ----------- | -------------------------------- |
-| ETRS89 geogr. NN2000    | EPSG      |        5942 |                                  |
-| ETRS89 geogr. NN54      | EPSG      |        6144 |                                  |
-| ETRS89 2D geogr.        | EPSG      |        4258 |                                  |
-| ETRS89 3D geogr.        | EPSG      |        4937 |                                  |
-| ETRS89 geosentrisk      | EPSG      |        4936 |                                  |
-| ETRS89 UTM 31-36 2D     | EPSG      | 25831-25836 |                                  |
-| ETRS89 UTM 31-36 NN54   | EPSG      |   6171-6176 |                                  |
-| ETRS89 UTM 31-36 NN2000 | EPSG      |   5971-5976 |                                  |
-| ETRS89 NTM 5-30 2D      | EPSG      |   5105-5130 |                                  |
-| ETRS89 NTM 5-30 NN54    | EPSG      |   6145-6170 |                                  |
-| ETRS89 NTM 5-30 NN2000  | EPSG      |   5945-5970 |                                  |
-| NN2000                  | EPSG      |        5941 | Vertialt datum. Bruk heller 5942 |
-| NN54                    | EPSG      |        5776 | Vertialt datum. Bruk heller 6144 |
-| CD Norway Depth         | EPSG      |        9672 | (Sjøkartnull)                    |
-| ETRS89 geogr. CD Norway | EPSG      |        9883 |                                  |
-| NGO48 geografisk 2D     | EPSG      |        4273 |                                  |
-| NGO48 akse I-VIII       | EPSG      | 27391-27398 |                                  |
-| ITRF2014 geosentrisk    | EPSG      |        7789 |                                  |
-| ITRF2014 geogr. 2D      | EPSG      |        9000 |                                  |
-| ITRF2014 geogr. 3D      | EPSG      |        7912 |                                  |
-| ED50                    | EPSG      |        4230 | Under arbeid                     |
-| ED50 UTM 31-36 2D       | EPSG      | 23031-23036 | Under arbeid                     |
+| Namn ref.rammer               | Autoritet | Kode        | Merknad                          |
+| ----------------------------- | --------- | ----------- | -------------------------------- |
+| ETRS89 geogr. NN2000          | EPSG      |        5942 | Sammensett 2D + 1D               |
+| ETRS89 geogr. NN54            | EPSG      |        6144 | Sammensett 2D + 1D               |
+| ETRS89 2D geogr.              | EPSG      |        4258 |                                  |
+| ETRS89 3D geogr.              | EPSG      |        4937 |                                  |
+| ETRS89 geosentrisk            | EPSG      |        4936 |                                  |
+| ETRS89 UTM 31-36 2D           | EPSG      | 25831-25836 |                                  |
+| ETRS89 UTM 31-36 NN54         | EPSG      |   6171-6176 | Sammensett 2D + 1D               |
+| ETRS89 UTM 31-36 NN2000       | EPSG      |   5971-5976 | Sammensett 2D + 1D               |
+| ETRS89 NTM 5-30 2D            | EPSG      |   5105-5130 |                                  |
+| ETRS89 NTM 5-30 NN54          | EPSG      |   6145-6170 | Sammensett 2D + 1D               |
+| ETRS89 NTM 5-30 NN2000        | EPSG      |   5945-5970 | Sammensett 2D + 1D               |
+| NN2000                        | EPSG      |        5941 | Vertialt datum. Bruk heller 5942 |
+| NN54                          | EPSG      |        5776 | Vertialt datum. Bruk heller 6144 |
+| ETRS89 geogr. CD Norway Depth | EPSG      |        5942 |                                  |
+| CD Norway Depth               | EPSG      |        9672 | (Sjøkartnull)                    |
+| ETRS89 geogr. CD Norway       | EPSG      |        9883 | Sammensett 2D + 1D               |
+| NGO48 geografisk 2D           | EPSG      |        4273 |                                  |
+| NGO48 akse I-VIII             | EPSG      | 27391-27398 |                                  |
+| ITRF2014 geosentrisk          | EPSG      |        7789 |                                  |
+| ITRF2014 geogr. 2D            | EPSG      |        9000 |                                  |
+| ITRF2014 geogr. 3D            | EPSG      |        7912 |                                  |
+| ED50                          | EPSG      |        4230 | Under arbeid                     |
+| ED50 UTM 31-36 2D             | EPSG      | 23031-23036 | Under arbeid                     |
 
 
 ### Tilgjengelig transformasjoner (eksempler)
