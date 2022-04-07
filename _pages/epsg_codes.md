@@ -34,7 +34,7 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 | NN2000                        | EPSG      |        5941 | Vertialt datum. Bruk heller 5942 |
 | NN54                          | EPSG      |        5776 | Vertialt datum. Bruk heller 6144 |
 | ETRS89 geogr. CD Norway Depth | EPSG      |        5942 |                                  |
-| CD Norway Depth               | EPSG      |        9672 | (Sjøkartnull)                    |
+| CD Norway Depth               | EPSG      |        9672 | (Sjøkartnull). Bruk heller 9883  |
 | ETRS89 geogr. CD Norway       | EPSG      |        9883 | Sammensett 2D + 1D               |
 | NGO48 geografisk 2D           | EPSG      |        4273 |                                  |
 | NGO48 akse I-VIII             | EPSG      | 27391-27398 |                                  |
@@ -73,6 +73,7 @@ I tabellen nedenfor vilkårlige punkter transformert i Proj med EPSG-koder på f
 |  EPSG:4258 |  EPSG:4230 |         10.000 |        60.000 |              - |        - | 10.001392846773 | 60.000445365016 |               - |  EPSG:1182 |
 |  EPSG:7912 |  EPSG:4937 |         10.000 |        60.000 |        100.000 |  2020.00 |  9.999991914885 | 59.999995109525 |       99.866247 |          - |
 |  EPSG:7912 |  EPSG:4937 |         10.000 |        60.000 |        100.000 |  2010.00 |  9.999994722263 | 59.999996478159 |       99.913505 |          - |
+|  EPSG:4937 |  EPSG:9883 |          5.040 |        60.100 |         40.000 |        - |           5.040 |          60.100 |        3.870998 |          - |
 
 
 #### Transformasjon ved standard installasjon av Proj
