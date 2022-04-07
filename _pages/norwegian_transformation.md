@@ -7,9 +7,7 @@ order: 5
 ## Oversikt over norske tilpasninger i Proj
 
 
-
 ### NN2000-høydetransformasjon
-
 
 
 ### NN54-høydetransformasjon
@@ -21,8 +19,8 @@ order: 5
 ### Tranformasjoner mellom ITRF2014 og ETRS89 (EUREF89)
 
 
+### Sjøkartnull-høydetransformasjon (Chart Datum Norway)
+
+
 ### Ny samlet transformasjon mellom ED50 og ETRS89 (EUREF89), under arbeid
-
-
-### Sjøkartnull-høydetransformasjon (Chart Datum Norway), under arbeid
 
