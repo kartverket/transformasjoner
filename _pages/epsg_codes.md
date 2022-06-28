@@ -33,9 +33,9 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 | ETRS89 NTM 5-30 NN2000          | EPSG      |   5945-5970 | Sammensett 2D + 1D               |
 | NN2000                          | EPSG      |        5941 | Vertialt datum. Bruk heller 5942 |
 | NN54                            | EPSG      |        5776 | Vertialt datum. Bruk heller 6144 |
-| ETRS89 geogr. CD Norway Heights | EPSG      |        5942 |                                  |
+| ETRS89 geogr. 3D Norway Heights | EPSG      |        5942 |                                  |
 | CD Norway Depths                | EPSG      |        9672 | (Sjøkartnull). Bruk heller 9883  |
-| ETRS89 geogr. CD Norway         | EPSG      |        9883 | Sammensett 2D + 1D               |
+| ETRS89 geogr. 3D CD Norway      | EPSG      |        9883 | Sammensett 2D + 1D               |
 | NGO48 geografisk 2D             | EPSG      |        4273 |                                  |
 | NGO48 akse I-VIII               | EPSG      | 27391-27398 |                                  |
 | ITRF2014 geosentrisk            | EPSG      |        7789 |                                  |
