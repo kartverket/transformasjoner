@@ -28,8 +28,7 @@ cs2cs -d 4 EPSG:4258 EPSG:20001
 Ressursfilene som transformasjonen er avhengig av er sleppt på [cdn.proj.org](https://cdn.proj.org) og [PROJ-data](https://github.com/OSGeo/PROJ-data).
 
 
-
-Link til korreksjonsgridd på dette repoet:
+Link til høydereferansemeoll på dette repoet:
 
 * [Korreksjonsgridd ITRF2014-EUREF89](https://github.com/kartverket/transformasjoner/tree/master/src/projresources/public/no_kv_arcgp-2006-sk.tif)
 
