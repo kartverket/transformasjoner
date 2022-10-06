@@ -76,7 +76,7 @@ I tabellen nedenfor vilkårlige punkter transformert i Proj med EPSG-koder på f
 |  EPSG:4937 |  EPSG:9883 |          5.040 |        60.100 |         40.000 |        - |           5.040 |          60.100 |        3.870998 |          - |
 
 
-#### Transformasjon ved standard installasjon av Proj
+### Transformasjon ved standard installasjon av Proj
 
 ``cs2cs EPSG:7789 EPSG:4936 --area EPSG:1352``
 
@@ -84,7 +84,8 @@ I dette eksemplet initialiseres Proj til å transformere jordsentriske koordinat
 
 ``cs2cs EPSG:7789 EPSG:4936 --area EPSG:1080``
 
-#### Transformasjon fra NN2000-høyder til Sjøkartnull-dybder
+
+### Transformasjon fra NN2000-høyder til Sjøkartnull-dybder
 
 Fra og med Proj 9.0.0 er det mulig å transformere sømløst mellom NN2000 og Sjøkartnull
 
@@ -97,7 +98,7 @@ Eller som kortform:
 ``cs2cs -d 4 EPSG:5942 EPSG:9883``
 
 
-#### Transformasjon med egendefinerte sammensatte referanserammer
+### Transformasjon med egendefinerte sammensatte referanserammer
 
 Proj har mulighet til å sette sammen forhåndsdefinerte datum for høyde og grunnriss. For eksempel kan man kombinere ETRS89 med høydedatumet EGM2008. Da kan man 
 bruke syntaksen *EPSG:4258+EPSG:3855*.
@@ -109,3 +110,20 @@ Utlisting av *EPSG:4258+EPSG:3855* på WKT-format:
 Transformasjon fra ETRS89 ellipsoidiske høyder til EGM2008:
 
 ``cs2cs -d 4 EPSG:4258 EPSG:4258+EPSG:3855``
+
+
+### Transformasjon fra og til fil med *cs2cs*-kommandoen
+
+``cs2cs -d <desimaler> EPSG:<fra-kode> EPSG:<til-kode> <path fra-fil> > <path til-fil>``
+
+Eksempel transformasjon fra *ETRS89 3D geogr.* til *ETRS89 UTM 32 NN2000*:
+
+``cs2cs -d 4 EPSG:4937 EPSG:25832+EPSG:5941 innfil.txt > utfil.txt``
+
+Formatet på *innfil.txt* kan være:
+
+```
+60.1441561 10.2520844 116.5761 Hønefoss1
+60.1432313 10.2590881 117.1235 Hønefoss2
+60.1430092 10.2587710 115.0488 Hønefoss3
+```
