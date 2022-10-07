@@ -109,7 +109,7 @@ Utlisting av *EPSG:4258+EPSG:3855* på WKT-format:
 
 Transformasjon fra ETRS89 ellipsoidiske høyder til EGM2008:
 
-``cs2cs -d 4 EPSG:4258 EPSG:4258+EPSG:3855``
+``cs2cs -d 4 EPSG:4937 EPSG:4258+EPSG:3855``
 
 
 ### Transformasjon fra og til fil med *cs2cs*-kommandoen
