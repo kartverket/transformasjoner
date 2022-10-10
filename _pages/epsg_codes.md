@@ -84,6 +84,23 @@ I dette eksemplet initialiseres Proj til å transformere jordsentriske koordinat
 
 ``cs2cs EPSG:7789 EPSG:4936 --area EPSG:1080``
 
+### Transformasjon med *--3d*-option (nytt i Proj v. 9.1.0)
+
+Hvis koordinatsystemet som man transformerer fra er horisontal (2D) må man legge til optionen *--3d*.
+
+Feil:
+```
+cs2cs -d 4 EPSG:4258 EPSG:4258+EPSG:5941
+60 10 100
+60.0000 10.0000 100.0000
+```
+
+Riktig:
+```
+cs2cs -d 4 --3d EPSG:4258 EPSG:4258+EPSG:5941
+60 10 100
+60.0000 10.0000 59.4360
+```
 
 ### Transformasjon fra NN2000-høyder til Sjøkartnull-dybder
 
