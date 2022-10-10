@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Ressursfiler i Proj
-order: 7
+order: 8
 ---
 
 Kopier alle filene i [public](../src/projresources/public/) til den lokale ressursmappe di. Ressursmappa vil variere avhengig av hvordan Proj er installert.
