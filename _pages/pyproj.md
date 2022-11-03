@@ -56,3 +56,19 @@ Ressursfilene vil plasseres i samme mappe som for standard Proj-installasjon.
 > from pyproj import Transformer, transform \
 > transform = Transformer.from_pipeline("+proj=deformation +t_epoch=2000.0 +grids=eur_nkg_nkgrf17vel.tif") # Transformerer til epoke 2000.0 \
 > transform.transform(2345766.37502, 543139.33223, 5886461.69393, 2020.00)
+
+#### Eksempel på transformasjon med *proj-streng* i *pyproj*
+
+I dette eksempelet blir proj-strengen satt opp til å transformere mellom to forskjellige ellipsoider.
+
+> python \
+> from pyproj import Transformer, transform \
+> projline_str = ( \
+>     "+proj=pipeline" \
+>     "+step +proj=axisswap +order=2,1" \
+>     "+step +proj=unitconvert +xy_in=deg +z_in=m +xy_out=rad +z_out=m" \
+>     "+step +proj=cart +ellps=GRS80" \
+>     "+step +inv +proj=cart +a=6378136.0 +rf=298.25784" \
+>     "+step +proj=unitconvert +xy_in=rad +z_in=m +xy_out=deg +z_out=m" \
+>     "+step +proj=axisswap +order=2,1" \
+> )
