@@ -43,6 +43,8 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 | ITRF2014 geogr. 3D              | EPSG      |        7912 |                                  |
 | ED50                            | EPSG      |        4230 | Under arbeid                     |
 | ED50 UTM 31-36 2D               | EPSG      | 23031-23036 | Under arbeid                     |
+| SVD2006                         | EPSG      |       20000 |                                  |
+| ETRS89 geogr. SVD2006           | EPSG      |       20001 | Sammensett 2D + 1D               |
 
 
 ### Tilgjengelig transformasjoner (eksempler)
@@ -74,6 +76,7 @@ I tabellen nedenfor vilkårlige punkter transformert i Proj med EPSG-koder på f
 |  EPSG:7912 |  EPSG:4937 |         10.000 |        60.000 |        100.000 |  2020.00 |  9.999991896247 | 59.999995111756 |       99.866516 |          - |
 |  EPSG:7912 |  EPSG:4937 |         10.000 |        60.000 |        100.000 |  2010.00 |  9.999994703625 | 59.999996480391 |       99.913775 |          - |
 |  EPSG:4937 |  EPSG:9883 |          5.040 |        60.100 |         40.000 |        - |           5.040 |          60.100 |        3.870998 |          - |
+|  EPSG:4237 | EPSG:20001 |         15.000 |        78.000 |        100.000 |        - |          15.000 |          78.000 |       67.910250 |          - |
 
 
 ### Transformasjon ved standard installasjon av Proj
