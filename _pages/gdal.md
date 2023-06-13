@@ -39,6 +39,5 @@ Enter X Y [Z [T]] values separated by space, and press Return. \
 GDAL har støtte for konvertering, transformering og formatering av en mengde ulike vektor formater [Link til vektorformater som det er støtte for i GDAL](https://gdal.org/drivers/vector/index.html).
 
 Eksempel på transformasjon fra NN42 til NN2000 på GML i EUREF89 UTM32:
->ogr2ogr -t_srs EPSG:5972 -s_srs EPSG:6172 -f GML C:\Prosjekter\PostGIS\Utfil_EPSG5972.gml C:\Prosjekter\PostGIS\Innfil_EPSG6172.gml
-
+>ogr2ogr -t_srs EPSG:5972 -s_srs EPSG:6172 -f GML Utfil_EPSG5972.gml Innfil_EPSG6172.gml
 
