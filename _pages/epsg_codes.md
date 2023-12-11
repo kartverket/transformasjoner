@@ -41,6 +41,9 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 | ITRF2014 geosentrisk            | EPSG      |        7789 |                                  |
 | ITRF2014 geogr. 2D              | EPSG      |        9000 |                                  |
 | ITRF2014 geogr. 3D              | EPSG      |        7912 |                                  |
+| ITRF2020 geosentrisk            | EPSG      |        9988 |                                  |
+| ITRF2020 geogr. 2D              | EPSG      |        9990 |                                  |
+| ITRF2020 geogr. 3D              | EPSG      |        9989 |                                  |
 | ED50                            | EPSG      |        4230 | Under arbeid                     |
 | ED50 UTM 31-36 2D               | EPSG      | 23031-23036 | Under arbeid                     |
 | SVD2006                         | EPSG      |       20000 |                                  |
@@ -64,6 +67,7 @@ I tabellen nedenfor vilkårlige punkter transformert i Proj med EPSG-koder på f
 | Fra kode   | Til kode   | Input X/lon/E  | Input Y/lat/N | Input Z/h/H    | Epoke    | Output X/lon/E  | Output Y/lat/N  | Output Z/h/H    | Områdekode |
 | ---------- | ---------- | -------------- | ------------- | -------------- | -------- | --------------- | --------------- | ----------------| ---------- | 
 |  EPSG:7789 |  EPSG:4936 |  1874722.01378 |  912943.23060 |  6007499.79547 |  2020.00 |  1874722.630745 |   912942.993045 |  6007499.590605 |          - |
+|  EPSG:9988 |  EPSG:4936 |  1874722.01378 |  912943.23060 |  6007499.79547 |  2020.00 |  1874722.628558 |   912942.991261 |  6007499.590482 |          - |
 |  EPSG:4937 |  EPSG:4273 |         10.000 |        60.000 |              - |        - | 10.004772119609 | 59.999247563843 |               - |          - |
 | EPSG:25832 | EPSG:27393 |     500000.000 |   6600000.000 |              - |        - |     -97197.1595 |     172511.9003 |               - |          - |
 |  EPSG:4230 |  EPSG:4326 |         10.000 |        60.000 |              - |        - |  9.998594123185 | 59.999544266822 |               - |          - |
