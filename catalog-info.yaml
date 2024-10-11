@@ -1,0 +1,38 @@
+# nonk8s
+apiVersion: "backstage.io/v1alpha1"
+kind: "Component"
+metadata:
+  name: "transformasjoner"
+  tags:
+  - "public"
+spec:
+  type: "website"
+  lifecycle: "production"
+  owner: "referanserammer"
+  system: "transformasjon"
+---
+apiVersion: "backstage.io/v1alpha1"
+kind: "Group"
+metadata:
+  name: "security_champion_transformasjoner"
+  title: "Security Champion transformasjoner"
+spec:
+  type: "security_champion"
+  parent: "geodesi_security_champions"
+  members:
+  - "keyos89"
+  children:
+  - "resource:transformasjoner"
+---
+apiVersion: "backstage.io/v1alpha1"
+kind: "Resource"
+metadata:
+  name: "transformasjoner"
+  links:
+  - url: "https://github.com/kartverket/transformasjoner"
+    title: "transformasjoner på GitHub"
+spec:
+  type: "repo"
+  owner: "security_champion_transformasjoner"
+  dependencyOf:
+  - "component:transformasjoner"
