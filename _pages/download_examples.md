@@ -1,31 +1,15 @@
 ---
 layout: page
 title: Last ned eksempler
-order: 13
+order: 16
 ---
 
+Fra denne siden kan man laste ned eksempelfiler på csv-formatet på transformasjonsida til Kartverket [Transformasjontjenesten til Kartverket]([https://proj.org/](https://transformasjon.kartverket.no/)).
 
+<a href="file.txt">Download File</a>
+<a href="file.txt">Download File</a>
+<a href="file.txt">Download File</a>
+<a href="file.txt">Download File</a>
+<a href="file.txt">Download File</a>
 
-
-
-<!--
-Denne nettsiden er en brukerveiledning på hvordan transformere koordinater med biblioteket [Proj](https://proj.org/).		
-
-Nettsiden er utviklet med tjenesten [Github Pages](https://pages.github.com/), der repoet ligger på Kartverket sin [Github](https://github.com/kartverket/transformasjoner). 		
- 
-## Kontaktinformasjon
-
-For mer informasjon om transformasjoner, referanserammer og Proj:
-
-* E-mail: [Kundesenteret](mailto:kundesenter@kartverket.no )
-
-## Transformasjonsteamet
-
-* Karoline Skaar, produkteier
-* Sveinung Himle, utvikler
-* Kristin Skjerven, markedsføring og formidling
-
-
-Skrive litt om repoet
-* Dato for siste oppdatering
--->
+[download]({{ site.baseurl }}{% link file.txt %})
