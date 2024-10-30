@@ -10,10 +10,7 @@ Begrepet konvertering innebærer å endre måten koordinater representeres på i
 
 ![Konverteringer](../src/ECEF_ENU_Longitude_Latitude_relationships.png)
 
-<!-- Original link: https://en.wikipedia.org/wiki/Local_tangent_plane_coordinates#/media/File:ECEF_ENU_Longitude_Latitude_relationships.svg 
-
-Dette er ein test:
-<a href="file.txt">Download File</a>
+<!-- Original link: https://en.wikipedia.org/wiki/Local_tangent_plane_coordinates#/media/File:ECEF_ENU_Longitude_Latitude_relationships.svg -->
 
 ## Transformasjoner
 
