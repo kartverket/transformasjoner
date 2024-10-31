@@ -8,7 +8,7 @@ Fra denne siden kan man laste ned eksempelfiler på csv-formatet på transformas
 
 ### Liste over tilgjengelige samplefiler på csv-formatet
 
-<a href="..\src\smaples\EPSG25832.csv">Download EPSG25832.csv</a>
-<a href="..\src\smaples\EPSG4258.csv">Download EPSG4258.csv</a>
-<a href="..\src\smaples\EPSG5972.csv">Download EPSG5972.csv</a>
-<a href="..\src\smaples\EPSG7912.csv">Download EPSG7912.csv</a>
+<a href="..\src\smaples\EPSG25832.csv">Last ned EPSG25832.csv</a><br>
+<a href="..\src\smaples\EPSG4258.csv">Last ned EPSG4258.csv</a><br>
+<a href="..\src\smaples\EPSG5972.csv">Last ned EPSG5972.csv</a><br>
+<a href="..\src\smaples\EPSG7912.csv">Last ned EPSG7912.csv</a><br>
