@@ -8,5 +8,5 @@ metadata:
 spec:
   type: "website"
   lifecycle: "production"
-  owner: "referanserammer"
+  owner: "nye_referanserammer"
   system: "transformasjon"
