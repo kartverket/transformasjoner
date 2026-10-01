@@ -48,6 +48,10 @@ Det mest vanlig vil være å oppgi EPSG-kodene på referanserammen/koordinatsyst
 | ED50 UTM 31-36 2D               | EPSG      | 23031-23036 | Under arbeid                     |
 | SVD2006                         | EPSG      |       20000 |                                  |
 | ETRS89 geogr. SVD2006           | EPSG      |       20001 | Sammensett 2D + 1D               |
+|                                 |           |             |                                  |
+|                                 |           |             |                                  |
+|                                 |           |             |                                  |
+
 
 
 ### Tilgjengelig transformasjoner (eksempler)
